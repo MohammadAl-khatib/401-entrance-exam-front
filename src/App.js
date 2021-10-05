@@ -126,12 +126,14 @@ export class App extends Component {
     return (
       <div>
         <Router>
+          <header style = {{"display":"flex", "justifyContent":"space-between","backgroundColor":"black","color":"white","marginBottom":"50px"}}>
           {this.props.auth0.isAuthenticated && <Nav />}
           {!this.props.auth0.isAuthenticated && <LoginButton />}
           {this.props.auth0.isAuthenticated && <LogoutButton />}
+          </header>
           <Switch>
             <Route exact path="/">
-              <DataCard data={this.state.data} addToFavs={this.addToFavs} />
+              <div style = {{"display":"grid","gridTemplateColumns":"auto auto auto"}}><DataCard data={this.state.data} addToFavs={this.addToFavs} /></div>
             </Route>
             <Route exact path="/favs">
               {this.props.auth0.isAuthenticated && (

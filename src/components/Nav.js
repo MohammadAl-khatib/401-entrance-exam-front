@@ -6,9 +6,9 @@ class Nav extends Component {
     render() {
         return (
             <div>
-                <ul>
+                <ul style = {{"display":"flex","justifyContent":"space-between"}}>
                     <li><Link to = '/'>Home</Link></li>
-                    <li><Link to = '/favs'>Favs</Link></li>
+                    <li style = {{"marginLeft":"30px"}}><Link to = '/favs'>Favs</Link></li>
                 </ul>
             </div>
         )
